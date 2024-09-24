@@ -140,6 +140,10 @@ This project is licensed under the MIT License. See the [LICENSE](https://github
 
 For any questions or feedback, feel free to reach out to the **Bassfinity** team. You can also open an issue on the [GitHub repository](https://github.com/bassfinity/solunarbass/issues) or reach them via email at [info@bassfinity.com](mailto:info@bassfinity.com).
 
+## Credits
+
+Special thanks to [Visual Crossing](https://www.visualcrossing.com/weather-api) for providing the weather data used in this application. Their comprehensive and reliable weather API was essential in building the forecasting functionality for this project.
+
 ---
 
 Happy Fishing! 🐟
