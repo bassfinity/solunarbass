@@ -4,3 +4,5 @@ numpy
 requests
 pytz
 streamlit-js-eval
+folium
+streamlit-folium
