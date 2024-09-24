@@ -1,10 +1,16 @@
+# app.py
+
 import streamlit as st
 from datetime import date, datetime
-from streamlit_js_eval import streamlit_js_eval  # Import the function
+from streamlit_js_eval import streamlit_js_eval  # Import for geolocation
 from src.data_acquisition import get_solunar_data
 from src.data_processing import process_solunar_data
 from src.solunar_calculations import calculate_major_minor_times
 from src.recommendation_engine import generate_recommendations
+import folium
+from streamlit_folium import st_folium
+
+st.set_page_config(page_title="SolunarBass", page_icon="🎣")
 
 st.title("🎣 SolunarBass")
 st.subheader("Optimal Bass Fishing Times Based on Solunar Theory")
@@ -37,11 +43,15 @@ if use_current_location:
     )
 
     if loc:
-        latitude = loc["latitude"]
-        longitude = loc["longitude"]
-        st.sidebar.success(f"Location acquired: ({latitude}, {longitude})")
+        if 'latitude' in loc and 'longitude' in loc:
+            latitude = loc["latitude"]
+            longitude = loc["longitude"]
+            st.sidebar.success(f"Location acquired: ({latitude:.6f}, {longitude:.6f})")
+        else:
+            st.sidebar.error("Unable to retrieve location. Please allow location access.")
+            st.stop()
     else:
-        st.sidebar.error("Unable to retrieve location. Please allow location access.")
+        st.sidebar.warning("Waiting for location... Make sure to allow location access.")
         st.stop()
 else:
     # Manual input
@@ -53,6 +63,9 @@ selected_date = st.sidebar.date_input("Date", value=date.today())
 if st.sidebar.button("Get Fishing Times"):
     with st.spinner('Fetching data...'):
         raw_data = get_solunar_data(latitude, longitude, selected_date)
+        if raw_data is None:
+            st.error("Failed to retrieve data. Please try again later.")
+            st.stop()
         date_str = selected_date.strftime('%Y-%m-%d')  # Convert date to string
         solunar_data = process_solunar_data(raw_data, date_str)
         major_times, minor_times = calculate_major_minor_times(solunar_data)
@@ -73,5 +86,11 @@ if st.sidebar.button("Get Fishing Times"):
     st.write(f"**Sunrise:** {solunar_data['sunrise'].strftime('%I:%M %p')}")
     st.write(f"**Sunset:** {solunar_data['sunset'].strftime('%I:%M %p')}")
     st.write(f"**Moon Phase:** {solunar_data['moon_phase']}")
+
+    # Display Map (Optional)
+    st.header("Map")
+    m = folium.Map(location=[latitude, longitude], zoom_start=12)
+    folium.Marker([latitude, longitude], tooltip="Your Location").add_to(m)
+    st_data = st_folium(m, width=700, height=500)
 else:
     st.info("Please enter parameters and click 'Get Fishing Times'")
