@@ -3,4 +3,4 @@ pandas
 numpy
 requests
 pytz
-python-dotenv
+streamlit-js-eval
