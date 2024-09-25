@@ -1,3 +1,5 @@
+[![UptimeRobot status](https://img.shields.io/badge/status-up-green.svg)](https://stats.uptimerobot.com/AQLeOzd84C)
+
 # Solunar Bass Forecasting Tool 🎣
 
 Welcome to **Solunar Bass**, an open-source project by **Bassfinity** that helps bass fishermen maximize their fishing success using solunar theory, data acquisition, and personalized recommendations. This repository powers a web app that predicts optimal bass fishing times based on solunar data, weather conditions, and location.
