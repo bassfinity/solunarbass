@@ -6,3 +6,4 @@ pytz
 streamlit-js-eval
 folium
 streamlit-folium
+toml
