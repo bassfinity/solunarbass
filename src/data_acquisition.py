@@ -1,12 +1,38 @@
 # src/data_acquisition.py
 
+import os
 import requests
 import streamlit as st
 
-API_KEY = st.secrets.get("API_KEY")
-if not API_KEY:
-    st.error("API_KEY not found. Please set it in Streamlit Secrets.")
+def get_api_key():
+    # First, try to get the API_KEY from st.secrets
+    try:
+        api_key = st.secrets["API_KEY"]
+        if api_key:
+            return api_key
+    except (AttributeError, FileNotFoundError, KeyError):
+        pass
+
+    # Next, try to get it from environment variables
+    api_key = os.getenv("API_KEY")
+    if api_key:
+        return api_key
+
+    # Optionally, try to get it from a local config.toml file
+    try:
+        import toml
+        config = toml.load("config.toml")
+        api_key = config.get("API_KEY")
+        if api_key:
+            return api_key
+    except (FileNotFoundError, ModuleNotFoundError):
+        pass
+
+    # If all else fails, display an error and stop the app
+    st.error("API_KEY not found. Please set it in Streamlit Secrets, as an environment variable, or in config.toml.")
     st.stop()
+
+API_KEY = get_api_key()
 
 def get_solunar_data(lat, lon, date):
     url = 'https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/'
