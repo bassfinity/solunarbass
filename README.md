@@ -5,7 +5,7 @@
 
 ![SolunarBass](assets/solunarbass.png)
 
-Welcome to **Solunar Bass**, an open-source project by **Bassfinity** that helps bass fishermen maximize their fishing success using solunar theory, data acquisition, and personalized recommendations. This repository powers a web app that predicts optimal bass fishing times based on solunar data, weather conditions, and location. You can the website [here](https://solunarbass-h9jxdwh8usuzhpix2yessm.streamlit.app)
+Welcome to **Solunar Bass**, an open-source project by **Bassfinity** that helps bass fishermen maximize their fishing success using solunar theory, data acquisition, and personalized recommendations. This repository powers a web app that predicts optimal bass fishing times based on solunar data, weather conditions, and location. You can view the website [here](https://solunarbass-h9jxdwh8usuzhpix2yessm.streamlit.app)
 
 The project consists of several key components working together, from data acquisition to recommendations.
 
