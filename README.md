@@ -262,6 +262,12 @@ This project is licensed under the MIT License. See the [LICENSE](https://github
 
 For any questions or feedback, feel free to reach out to the **Bassfinity** team. You can also open an issue on the [GitHub repository](https://github.com/bassfinity/solunarbass/issues) or contact us via email at [info@bassfinity.com](mailto:info@bassfinity.com).
 
+🎧 Join the SolunarBass Community on Discord
+
+We now have a dedicated **#solunarbass** channel in the Bassfinity Discord server! Join our community to discuss solunar theory, share fishing experiences, and collaborate on improving the SolunarBass tool. Whether you're a developer, an angler, or both, we'd love to have you.
+
+- **Discord Invite:** [Join our Discord](https://discord.gg/PZSSWcZy) and find us in the **#solunarbass** channel.
+
 ---
 
 ## Credits
