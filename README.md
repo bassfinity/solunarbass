@@ -238,20 +238,6 @@ This module uses solunar theory to recommend the best times for bass fishing.
 
 ---
 
-Here’s an updated version of the `README.md` with Docker-specific instructions included:
-
----
-
-# Solunar Bass Forecasting Tool 🎣
-
-[![UptimeRobot status](https://img.shields.io/badge/status-up-green.svg)](https://stats.uptimerobot.com/AQLeOzd84C)
-
-![SolunarBass](assets/solunarbass.png)
-
-Welcome to **Solunar Bass**, an open-source project by **Bassfinity** that helps bass fishermen maximize their fishing success using solunar theory, data acquisition, and personalized recommendations. This repository powers a web app that predicts optimal bass fishing times based on solunar data, weather conditions, and location. You can view the website [here](https://solunarbass-h9jxdwh8usuzhpix2yessm.streamlit.app)
-
----
-
 ## New: Run with Docker 🐋
 
 You can now run the Solunar Bass Forecasting Tool using Docker. Follow the steps below to build and run the Docker container.
@@ -304,7 +290,7 @@ If you want to build the image yourself:
    ```bash
    docker run -p 8501:8501 anuclei/solunarbass:latest
    ```
-If you just perfer to pull the image from docker hub, you can use the following[image](https://hub.docker.com/repository/docker/anuclei/solunarbass/general)
+If you perfer to pull the image from docker hub, you can use the following[image](https://hub.docker.com/repository/docker/anuclei/solunarbass/general)
 
 ---
 
@@ -314,7 +300,7 @@ Contributions are welcome! If you want to contribute to the project, follow thes
 
 1. **Fork the repository**.
 
-2. **Create a new branch** for your feature or bugfix.
+2. **Create a new branch** for your feature or bug fix.
 
 3. **Make your changes** and ensure everything is tested.
 
