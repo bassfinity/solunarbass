@@ -1,5 +1,3 @@
-# src/recommendation_engine.py
-
 def generate_recommendations(major_times, minor_times):
     recommendations = []
 

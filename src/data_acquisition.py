@@ -1,5 +1,3 @@
-# src/data_acquisition.py
-
 import os
 import requests
 import streamlit as st

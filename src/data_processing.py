@@ -1,5 +1,3 @@
-# src/data_processing.py
-
 from datetime import datetime
 
 def process_solunar_data(data, date_str):

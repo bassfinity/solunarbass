@@ -238,6 +238,76 @@ This module uses solunar theory to recommend the best times for bass fishing.
 
 ---
 
+Here’s an updated version of the `README.md` with Docker-specific instructions included:
+
+---
+
+# Solunar Bass Forecasting Tool 🎣
+
+[![UptimeRobot status](https://img.shields.io/badge/status-up-green.svg)](https://stats.uptimerobot.com/AQLeOzd84C)
+
+![SolunarBass](assets/solunarbass.png)
+
+Welcome to **Solunar Bass**, an open-source project by **Bassfinity** that helps bass fishermen maximize their fishing success using solunar theory, data acquisition, and personalized recommendations. This repository powers a web app that predicts optimal bass fishing times based on solunar data, weather conditions, and location. You can view the website [here](https://solunarbass-h9jxdwh8usuzhpix2yessm.streamlit.app)
+
+---
+
+## New: Run with Docker 🐋
+
+You can now run the Solunar Bass Forecasting Tool using Docker. Follow the steps below to build and run the Docker container.
+
+### Prerequisites
+
+- Install [Docker](https://docs.docker.com/get-docker/) on your system.
+
+---
+
+### Run the Application Using Docker
+
+1. **Pull the Prebuilt Image**
+   The Docker image is available on Docker Hub. Pull it using:
+   ```bash
+   docker pull anuclei/solunarbass:latest
+   ```
+
+2. **Run the Container**
+   Start the container and map the appropriate ports:
+   ```bash
+   docker run -p 8501:8501 anuclei/solunarbass:latest
+   ```
+
+3. **Access the Application**
+   Open your browser and navigate to:
+   ```
+   http://localhost:8501
+   ```
+
+---
+
+### Build the Docker Image Locally (Optional)
+
+If you want to build the image yourself:
+
+1. **Clone the Repository**
+   ```bash
+   git clone https://github.com/bassfinity/solunarbass.git
+   cd solunarbass
+   ```
+
+2. **Build the Image**
+   Use the following command to build the Docker image:
+   ```bash
+   docker build -t anuclei/solunarbass:latest .
+   ```
+
+3. **Run the Container**
+   ```bash
+   docker run -p 8501:8501 anuclei/solunarbass:latest
+   ```
+If you just perfer to pull the image from docker hub, you can use the following[image](https://hub.docker.com/repository/docker/anuclei/solunarbass/general)
+
+---
+
 ## Contributing
 
 Contributions are welcome! If you want to contribute to the project, follow these steps:
