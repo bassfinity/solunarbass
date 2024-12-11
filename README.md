@@ -238,7 +238,7 @@ This module uses solunar theory to recommend the best times for bass fishing.
 
 ---
 
-## New: Run with Docker 🐋
+## Run with Docker 🐋
 
 You can now run the Solunar Bass Forecasting Tool using Docker. Follow the steps below to build and run the Docker container.
 
