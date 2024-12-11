@@ -1,5 +1,3 @@
-# app.py
-
 import streamlit as st
 from datetime import date, datetime
 from streamlit_js_eval import streamlit_js_eval  # For geolocation
