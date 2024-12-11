@@ -290,7 +290,7 @@ If you want to build the image yourself:
    ```bash
    docker run -p 8501:8501 anuclei/solunarbass:latest
    ```
-If you perfer to pull the image from docker hub, you can use the following[image](https://hub.docker.com/repository/docker/anuclei/solunarbass/general)
+If you perfer to pull the image from docker hub, you can use the following [image](https://hub.docker.com/repository/docker/anuclei/solunarbass/general)
 
 ---
 
