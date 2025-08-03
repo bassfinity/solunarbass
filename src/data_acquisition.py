@@ -2,6 +2,7 @@ import os
 import requests
 import streamlit as st
 
+
 def get_api_key():
     # First, try to get the API_KEY from st.secrets
     try:
@@ -27,20 +28,28 @@ def get_api_key():
         pass
 
     # If all else fails, display an error and stop the app
-    st.error("API_KEY not found. Please set it in Streamlit Secrets, as an environment variable, or in config.toml.")
+    st.error(
+        "API_KEY not found. Please set it in Streamlit Secrets, "
+        "as an environment variable, or in config.toml."
+    )
     st.stop()
+
 
 API_KEY = get_api_key()
 
+
 def get_solunar_data(lat, lon, date):
-    url = 'https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/'
-    date_str = date.strftime('%Y-%m-%d')
+    base_url = (
+        'https://weather.visualcrossing.com/'
+        'VisualCrossingWebServices/rest/services/timeline/'
+    )
+    url = f"{base_url}{lat},{lon}/{date.strftime('%Y-%m-%d')}"
     params = {
         'key': API_KEY,
         'include': 'hours',
         'elements': 'datetime,sunrise,sunset,moonphase,moonrise,moonset',
     }
-    response = requests.get(f"{url}{lat},{lon}/{date_str}", params=params)
+    response = requests.get(url, params=params)
     if response.status_code == 200:
         try:
             data = response.json()
@@ -50,6 +59,9 @@ def get_solunar_data(lat, lon, date):
             st.write("Response content:", response.text)
             return None
     else:
-        st.error(f"Error fetching data: {response.status_code} - {response.reason}")
+        st.error(
+            f"Error fetching data: {response.status_code} - "
+            f"{response.reason}"
+        )
         st.write("Response content:", response.text)
         return None
