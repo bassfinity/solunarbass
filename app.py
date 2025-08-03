@@ -95,10 +95,13 @@ if st.session_state.data_fetched and st.session_state.solunar_data:
 
     # Display Recommendations
     st.header("Recommended Fishing Times")
-    for rec in st.session_state.recommendations:
-        start_time = rec['start'].strftime('%I:%M %p')
-        end_time = rec['end'].strftime('%I:%M %p')
-        st.write(f"**{rec['type']} Period:** {start_time} - {end_time}")
+    if st.session_state.recommendations:
+        for rec in st.session_state.recommendations:
+            start_time = rec['start'].strftime('%I:%M %p')
+            end_time = rec['end'].strftime('%I:%M %p')
+            st.write(f"**{rec['type']} Period:** {start_time} - {end_time}")
+    else:
+        st.warning("No major or minor times could be calculated. This may be due to missing moonrise/moonset data.")
 
     # Display Additional Information
     st.header("Additional Information")
