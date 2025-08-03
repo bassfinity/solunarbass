@@ -1,5 +1,6 @@
 from datetime import datetime
 
+
 def process_solunar_data(data, date_str):
     # Extract necessary data
     try:
@@ -16,16 +17,22 @@ def process_solunar_data(data, date_str):
         datetime_format = f'{date_format} {time_format}'
 
         # Combine date and time
-        sunrise_dt = datetime.strptime(f"{date_str} {sunrise}", datetime_format)
+        sunrise_dt = datetime.strptime(
+            f"{date_str} {sunrise}", datetime_format
+        )
         sunset_dt = datetime.strptime(f"{date_str} {sunset}", datetime_format)
 
         if moonrise:
-            moonrise_dt = datetime.strptime(f"{date_str} {moonrise}", datetime_format)
+            moonrise_dt = datetime.strptime(
+                f"{date_str} {moonrise}", datetime_format
+            )
         else:
             moonrise_dt = None
 
         if moonset:
-            moonset_dt = datetime.strptime(f"{date_str} {moonset}", datetime_format)
+            moonset_dt = datetime.strptime(
+                f"{date_str} {moonset}", datetime_format
+            )
         else:
             moonset_dt = None
 
