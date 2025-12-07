@@ -169,7 +169,8 @@ st.markdown(
         <p>
             <a href="https://bassfinity.com" target="_blank">Bassfinity.com</a> |
             <a href="https://www.twitter.com/bassfinity" target="_blank">Twitter</a> |
-            <a href="https://www.tiktok.com/@bassfinity_og" target="_blank">TikTok</a>
+            <a href="https://www.tiktok.com/@bassfinity_og" target="_blank">TikTok</a> |
+            <a href="https://www.instagram.com/bassfinity_com" target="_blank">Instagram</a>
         </p>
     </div>
     """,
