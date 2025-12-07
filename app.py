@@ -160,3 +160,18 @@ if st.session_state.data_fetched and st.session_state.solunar_data:
     st_folium(m, width=700, height=500)
 else:
     st.info("Please enter parameters and click 'Get Fishing Times'")
+
+# Footer with social links
+st.markdown("---")
+st.markdown(
+    """
+    <div style="text-align: center;">
+        <p>
+            <a href="https://bassfinity.com" target="_blank">Bassfinity.com</a> |
+            <a href="https://www.twitter.com/bassfinity" target="_blank">Twitter</a> |
+            <a href="https://www.tiktok.com/@bassfinity_og" target="_blank">TikTok</a>
+        </p>
+    </div>
+    """,
+    unsafe_allow_html=True
+)
