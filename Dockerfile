@@ -1,5 +1,5 @@
 # Use an official Python image as the base
-FROM python:3.9-slim
+FROM python:3.14-slim
 
 # Set environment variables to ensure Python behaves well in Docker
 ENV PYTHONDONTWRITEBYTECODE=1 \
