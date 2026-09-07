@@ -1,5 +1,4 @@
 from datetime import timedelta
-import math
 
 
 def calculate_major_minor_times(solunar_data):
